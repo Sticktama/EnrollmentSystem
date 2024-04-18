@@ -1,0 +1,11 @@
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\bin\Debug\EnrollmentSystem.exe.config
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\bin\Debug\EnrollmentSystem.exe
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\bin\Debug\EnrollmentSystem.pdb
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.csproj.AssemblyReference.cache
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.csproj.SuggestedBindingRedirects.cache
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.Form1.resources
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.Properties.Resources.resources
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.csproj.GenerateResource.cache
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.csproj.CoreCompileInputs.cache
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.exe
+\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.pdb
