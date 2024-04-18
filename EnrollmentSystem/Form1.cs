@@ -21,7 +21,7 @@ namespace EnrollmentSystem
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\Mendez.accdb";
+            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\Mendez.accdb";
 
             OleDbConnection thisConnection = new OleDbConnection(connectionString);
             string sql = "SELECT * FROM SUBJECTFILE";
