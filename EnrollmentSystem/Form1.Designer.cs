@@ -37,26 +37,26 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.SubjectCodeTextBox = new System.Windows.Forms.TextBox();
-            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.UnitsTextBox = new System.Windows.Forms.TextBox();
-            this.OfferingComboBox = new System.Windows.Forms.ComboBox();
-            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.CourseCodeComboBox = new System.Windows.Forms.ComboBox();
-            this.CurriculumComboBox = new System.Windows.Forms.ComboBox();
+            this.CategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.OfferingComboBox = new System.Windows.Forms.ComboBox();
+            this.UnitsTextBox = new System.Windows.Forms.TextBox();
+            this.DescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.SubjectCodeTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.ClearButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.RequisiteTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.SubjectDataGridView = new System.Windows.Forms.DataGridView();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.ClearButton = new System.Windows.Forms.Button();
             this.SubjectCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescriptionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CoPreRequisiteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurriculumYearTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubjectDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -140,7 +140,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.CurriculumComboBox);
+            this.groupBox1.Controls.Add(this.CurriculumYearTextBox);
             this.groupBox1.Controls.Add(this.CourseCodeComboBox);
             this.groupBox1.Controls.Add(this.CategoryComboBox);
             this.groupBox1.Controls.Add(this.OfferingComboBox);
@@ -157,55 +157,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(48, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(339, 231);
+            this.groupBox1.Size = new System.Drawing.Size(393, 231);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Subject Information";
-            // 
-            // SubjectCodeTextBox
-            // 
-            this.SubjectCodeTextBox.Location = new System.Drawing.Point(130, 22);
-            this.SubjectCodeTextBox.Name = "SubjectCodeTextBox";
-            this.SubjectCodeTextBox.Size = new System.Drawing.Size(190, 20);
-            this.SubjectCodeTextBox.TabIndex = 8;
-            // 
-            // DescriptionTextBox
-            // 
-            this.DescriptionTextBox.Location = new System.Drawing.Point(130, 48);
-            this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(190, 20);
-            this.DescriptionTextBox.TabIndex = 9;
-            // 
-            // UnitsTextBox
-            // 
-            this.UnitsTextBox.Location = new System.Drawing.Point(130, 74);
-            this.UnitsTextBox.Name = "UnitsTextBox";
-            this.UnitsTextBox.Size = new System.Drawing.Size(121, 20);
-            this.UnitsTextBox.TabIndex = 10;
-            // 
-            // OfferingComboBox
-            // 
-            this.OfferingComboBox.FormattingEnabled = true;
-            this.OfferingComboBox.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
-            this.OfferingComboBox.Location = new System.Drawing.Point(130, 100);
-            this.OfferingComboBox.Name = "OfferingComboBox";
-            this.OfferingComboBox.Size = new System.Drawing.Size(121, 21);
-            this.OfferingComboBox.TabIndex = 11;
-            // 
-            // CategoryComboBox
-            // 
-            this.CategoryComboBox.FormattingEnabled = true;
-            this.CategoryComboBox.Items.AddRange(new object[] {
-            "LEC",
-            "LAB"});
-            this.CategoryComboBox.Location = new System.Drawing.Point(130, 127);
-            this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CategoryComboBox.TabIndex = 12;
             // 
             // CourseCodeComboBox
             // 
@@ -228,60 +183,63 @@
             this.CourseCodeComboBox.Size = new System.Drawing.Size(121, 21);
             this.CourseCodeComboBox.TabIndex = 13;
             // 
-            // CurriculumComboBox
+            // CategoryComboBox
             // 
-            this.CurriculumComboBox.FormattingEnabled = true;
-            this.CurriculumComboBox.Location = new System.Drawing.Point(130, 179);
-            this.CurriculumComboBox.Name = "CurriculumComboBox";
-            this.CurriculumComboBox.Size = new System.Drawing.Size(121, 21);
-            this.CurriculumComboBox.TabIndex = 14;
+            this.CategoryComboBox.FormattingEnabled = true;
+            this.CategoryComboBox.Items.AddRange(new object[] {
+            "LEC",
+            "LAB"});
+            this.CategoryComboBox.Location = new System.Drawing.Point(130, 127);
+            this.CategoryComboBox.Name = "CategoryComboBox";
+            this.CategoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.CategoryComboBox.TabIndex = 12;
+            // 
+            // OfferingComboBox
+            // 
+            this.OfferingComboBox.FormattingEnabled = true;
+            this.OfferingComboBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.OfferingComboBox.Location = new System.Drawing.Point(130, 100);
+            this.OfferingComboBox.Name = "OfferingComboBox";
+            this.OfferingComboBox.Size = new System.Drawing.Size(121, 21);
+            this.OfferingComboBox.TabIndex = 11;
+            // 
+            // UnitsTextBox
+            // 
+            this.UnitsTextBox.Location = new System.Drawing.Point(130, 74);
+            this.UnitsTextBox.Name = "UnitsTextBox";
+            this.UnitsTextBox.Size = new System.Drawing.Size(121, 20);
+            this.UnitsTextBox.TabIndex = 10;
+            // 
+            // DescriptionTextBox
+            // 
+            this.DescriptionTextBox.Location = new System.Drawing.Point(130, 48);
+            this.DescriptionTextBox.Name = "DescriptionTextBox";
+            this.DescriptionTextBox.Size = new System.Drawing.Size(190, 20);
+            this.DescriptionTextBox.TabIndex = 9;
+            // 
+            // SubjectCodeTextBox
+            // 
+            this.SubjectCodeTextBox.Location = new System.Drawing.Point(130, 22);
+            this.SubjectCodeTextBox.Name = "SubjectCodeTextBox";
+            this.SubjectCodeTextBox.Size = new System.Drawing.Size(190, 20);
+            this.SubjectCodeTextBox.TabIndex = 8;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.RequisiteTextBox);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.SubjectDataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(48, 321);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(339, 138);
+            this.groupBox2.Size = new System.Drawing.Size(393, 164);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Requisite Information";
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Location = new System.Drawing.Point(457, 179);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 11;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // ClearButton
-            // 
-            this.ClearButton.Location = new System.Drawing.Point(457, 208);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(75, 23);
-            this.ClearButton.TabIndex = 12;
-            this.ClearButton.Text = "&Clear";
-            this.ClearButton.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SubjectCodeColumn,
-            this.DescriptionColumn,
-            this.UnitsColumn,
-            this.CoPreRequisiteColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(301, 69);
-            this.dataGridView1.TabIndex = 10;
             // 
             // RequisiteTextBox
             // 
@@ -301,17 +259,50 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Requisite";
             // 
+            // SubjectDataGridView
+            // 
+            this.SubjectDataGridView.AllowUserToAddRows = false;
+            this.SubjectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SubjectDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SubjectCodeColumn,
+            this.DescriptionColumn,
+            this.UnitsColumn,
+            this.CoPreRequisiteColumn});
+            this.SubjectDataGridView.Location = new System.Drawing.Point(19, 50);
+            this.SubjectDataGridView.Name = "SubjectDataGridView";
+            this.SubjectDataGridView.RowHeadersVisible = false;
+            this.SubjectDataGridView.Size = new System.Drawing.Size(352, 86);
+            this.SubjectDataGridView.TabIndex = 10;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(67, 509);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 11;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // ClearButton
+            // 
+            this.ClearButton.Location = new System.Drawing.Point(198, 509);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearButton.TabIndex = 12;
+            this.ClearButton.Text = "&Clear";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            // 
             // SubjectCodeColumn
             // 
             this.SubjectCodeColumn.HeaderText = "Subject Code";
             this.SubjectCodeColumn.Name = "SubjectCodeColumn";
-            this.SubjectCodeColumn.Width = 50;
+            this.SubjectCodeColumn.Width = 80;
             // 
             // DescriptionColumn
             // 
             this.DescriptionColumn.HeaderText = "Description";
             this.DescriptionColumn.Name = "DescriptionColumn";
-            this.DescriptionColumn.Width = 70;
             // 
             // UnitsColumn
             // 
@@ -324,11 +315,18 @@
             this.CoPreRequisiteColumn.HeaderText = "Co/Pre-Requisite";
             this.CoPreRequisiteColumn.Name = "CoPreRequisiteColumn";
             // 
+            // CurriculumYearTextBox
+            // 
+            this.CurriculumYearTextBox.Location = new System.Drawing.Point(130, 184);
+            this.CurriculumYearTextBox.Name = "CurriculumYearTextBox";
+            this.CurriculumYearTextBox.Size = new System.Drawing.Size(121, 20);
+            this.CurriculumYearTextBox.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 497);
+            this.ClientSize = new System.Drawing.Size(552, 571);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.groupBox2);
@@ -340,7 +338,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SubjectDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,7 +355,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox CurriculumComboBox;
         private System.Windows.Forms.ComboBox CourseCodeComboBox;
         private System.Windows.Forms.ComboBox CategoryComboBox;
         private System.Windows.Forms.ComboBox OfferingComboBox;
@@ -367,13 +364,14 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button ClearButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView SubjectDataGridView;
         private System.Windows.Forms.TextBox RequisiteTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectCodeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitsColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoPreRequisiteColumn;
+        private System.Windows.Forms.TextBox CurriculumYearTextBox;
     }
 }
 
