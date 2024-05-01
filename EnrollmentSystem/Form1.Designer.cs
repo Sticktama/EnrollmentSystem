@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,8 +53,8 @@
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.SubjectCodeTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.CoRequisiteRadioButton = new System.Windows.Forms.RadioButton();
+            this.PreRequisiteRadioButton = new System.Windows.Forms.RadioButton();
             this.RequisiteTextBox = new System.Windows.Forms.TextBox();
             this.SubjectDataGridView = new System.Windows.Forms.DataGridView();
             this.SubjectCodeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,9 +179,9 @@
             this.SubjectInfoGroupBox.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubjectInfoGroupBox.ForeColor = System.Drawing.Color.White;
             this.SubjectInfoGroupBox.Location = new System.Drawing.Point(48, 89);
-            this.SubjectInfoGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubjectInfoGroupBox.Margin = new System.Windows.Forms.Padding(4);
             this.SubjectInfoGroupBox.Name = "SubjectInfoGroupBox";
-            this.SubjectInfoGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubjectInfoGroupBox.Padding = new System.Windows.Forms.Padding(4);
             this.SubjectInfoGroupBox.Size = new System.Drawing.Size(439, 335);
             this.SubjectInfoGroupBox.TabIndex = 8;
             this.SubjectInfoGroupBox.TabStop = false;
@@ -192,7 +192,7 @@
             this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClearButton.ForeColor = System.Drawing.Color.Black;
             this.ClearButton.Location = new System.Drawing.Point(309, 286);
-            this.ClearButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClearButton.Margin = new System.Windows.Forms.Padding(4);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(100, 28);
             this.ClearButton.TabIndex = 12;
@@ -204,7 +204,7 @@
             // 
             this.CurriculumYearTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurriculumYearTextBox.Location = new System.Drawing.Point(183, 242);
-            this.CurriculumYearTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CurriculumYearTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.CurriculumYearTextBox.Name = "CurriculumYearTextBox";
             this.CurriculumYearTextBox.Size = new System.Drawing.Size(225, 26);
             this.CurriculumYearTextBox.TabIndex = 15;
@@ -214,7 +214,7 @@
             this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.Black;
             this.SaveButton.Location = new System.Drawing.Point(183, 286);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 28);
             this.SaveButton.TabIndex = 11;
@@ -241,7 +241,7 @@
             "ID",
             "MED"});
             this.CourseCodeComboBox.Location = new System.Drawing.Point(183, 209);
-            this.CourseCodeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CourseCodeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CourseCodeComboBox.Name = "CourseCodeComboBox";
             this.CourseCodeComboBox.Size = new System.Drawing.Size(160, 28);
             this.CourseCodeComboBox.TabIndex = 13;
@@ -255,7 +255,7 @@
             "LEC",
             "LAB"});
             this.CategoryComboBox.Location = new System.Drawing.Point(183, 176);
-            this.CategoryComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CategoryComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(160, 28);
             this.CategoryComboBox.TabIndex = 12;
@@ -271,7 +271,7 @@
             "2",
             "3"});
             this.OfferingComboBox.Location = new System.Drawing.Point(183, 143);
-            this.OfferingComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OfferingComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.OfferingComboBox.Name = "OfferingComboBox";
             this.OfferingComboBox.Size = new System.Drawing.Size(160, 28);
             this.OfferingComboBox.TabIndex = 11;
@@ -280,7 +280,7 @@
             // 
             this.UnitsTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UnitsTextBox.Location = new System.Drawing.Point(183, 111);
-            this.UnitsTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UnitsTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UnitsTextBox.Name = "UnitsTextBox";
             this.UnitsTextBox.Size = new System.Drawing.Size(160, 26);
             this.UnitsTextBox.TabIndex = 10;
@@ -289,7 +289,7 @@
             // 
             this.DescriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescriptionTextBox.Location = new System.Drawing.Point(183, 79);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(225, 26);
             this.DescriptionTextBox.TabIndex = 9;
@@ -298,60 +298,61 @@
             // 
             this.SubjectCodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubjectCodeTextBox.Location = new System.Drawing.Point(183, 47);
-            this.SubjectCodeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubjectCodeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SubjectCodeTextBox.Name = "SubjectCodeTextBox";
             this.SubjectCodeTextBox.Size = new System.Drawing.Size(225, 26);
             this.SubjectCodeTextBox.TabIndex = 8;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.CoRequisiteRadioButton);
+            this.groupBox2.Controls.Add(this.PreRequisiteRadioButton);
             this.groupBox2.Controls.Add(this.RequisiteTextBox);
             this.groupBox2.Controls.Add(this.SubjectDataGridView);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(48, 433);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(767, 278);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Requisite Information";
             // 
-            // radioButton2
+            // CoRequisiteRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(595, 46);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(134, 27);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Co-requisite";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.CoRequisiteRadioButton.AutoSize = true;
+            this.CoRequisiteRadioButton.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoRequisiteRadioButton.Location = new System.Drawing.Point(595, 46);
+            this.CoRequisiteRadioButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CoRequisiteRadioButton.Name = "CoRequisiteRadioButton";
+            this.CoRequisiteRadioButton.Size = new System.Drawing.Size(134, 27);
+            this.CoRequisiteRadioButton.TabIndex = 18;
+            this.CoRequisiteRadioButton.TabStop = true;
+            this.CoRequisiteRadioButton.Text = "Co-requisite";
+            this.CoRequisiteRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // PreRequisiteRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(440, 46);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(139, 27);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Pre-requisite";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.PreRequisiteRadioButton.AutoSize = true;
+            this.PreRequisiteRadioButton.Checked = true;
+            this.PreRequisiteRadioButton.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreRequisiteRadioButton.Location = new System.Drawing.Point(440, 46);
+            this.PreRequisiteRadioButton.Margin = new System.Windows.Forms.Padding(4);
+            this.PreRequisiteRadioButton.Name = "PreRequisiteRadioButton";
+            this.PreRequisiteRadioButton.Size = new System.Drawing.Size(139, 27);
+            this.PreRequisiteRadioButton.TabIndex = 17;
+            this.PreRequisiteRadioButton.TabStop = true;
+            this.PreRequisiteRadioButton.Text = "Pre-requisite";
+            this.PreRequisiteRadioButton.UseVisualStyleBackColor = true;
             // 
             // RequisiteTextBox
             // 
             this.RequisiteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RequisiteTextBox.Location = new System.Drawing.Point(181, 47);
-            this.RequisiteTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RequisiteTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.RequisiteTextBox.Name = "RequisiteTextBox";
             this.RequisiteTextBox.Size = new System.Drawing.Size(223, 26);
             this.RequisiteTextBox.TabIndex = 16;
@@ -367,22 +368,22 @@
             this.UnitsColumn,
             this.CoPreRequisiteColumn});
             this.SubjectDataGridView.Location = new System.Drawing.Point(33, 87);
-            this.SubjectDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SubjectDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.SubjectDataGridView.Name = "SubjectDataGridView";
             this.SubjectDataGridView.ReadOnly = true;
             this.SubjectDataGridView.RowHeadersVisible = false;
             this.SubjectDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.SubjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.SubjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.SubjectDataGridView.Size = new System.Drawing.Size(704, 159);
             this.SubjectDataGridView.TabIndex = 10;
             this.SubjectDataGridView.SelectionChanged += new System.EventHandler(this.myDataGridView_SelectionChanged);
             // 
             // SubjectCodeColumn
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectCodeColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectCodeColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.SubjectCodeColumn.HeaderText = "Subject Code";
             this.SubjectCodeColumn.MinimumWidth = 6;
             this.SubjectCodeColumn.Name = "SubjectCodeColumn";
@@ -391,8 +392,8 @@
             // 
             // DescriptionColumn
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.DescriptionColumn.HeaderText = "Description";
             this.DescriptionColumn.MinimumWidth = 6;
             this.DescriptionColumn.Name = "DescriptionColumn";
@@ -401,8 +402,8 @@
             // 
             // UnitsColumn
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitsColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitsColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.UnitsColumn.HeaderText = "Units";
             this.UnitsColumn.MinimumWidth = 6;
             this.UnitsColumn.Name = "UnitsColumn";
@@ -411,8 +412,8 @@
             // 
             // CoPreRequisiteColumn
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoPreRequisiteColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoPreRequisiteColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.CoPreRequisiteColumn.HeaderText = "Co/Pre-Requisite";
             this.CoPreRequisiteColumn.MinimumWidth = 6;
             this.CoPreRequisiteColumn.Name = "CoPreRequisiteColumn";
@@ -452,7 +453,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.SubjectInfoGroupBox);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.SubjectInfoGroupBox.ResumeLayout(false);
@@ -494,8 +495,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitsColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CoPreRequisiteColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton CoRequisiteRadioButton;
+        private System.Windows.Forms.RadioButton PreRequisiteRadioButton;
     }
 }
 

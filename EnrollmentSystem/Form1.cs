@@ -57,7 +57,7 @@ namespace EnrollmentSystem
                 thisConnection.Open();
                 OleDbCommand thisCommand = thisConnection.CreateCommand();
 
-                string sql = "SELECT * FROM SUBJECTFILE, SUBJECTPREQFILE";
+                string sql = "SELECT * FROM SUBJECTFILE, SUBJECTPREQFILE, SUBJECTCOREQFILE";
                 thisCommand.CommandText = sql;
 
                 OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
@@ -88,10 +88,12 @@ namespace EnrollmentSystem
                             description = thisDataReader["SFSUBJDESC"].ToString();
                             units = thisDataReader["SFSUBJUNITS"].ToString();
 
-                            if(subjectCode == thisDataReader["SUBJCODE"].ToString())
+                            if(subjectCode == thisDataReader["SUBJECTPREQFILE.SUBJCODE"].ToString() && PreRequisiteRadioButton.Checked)
                                 copre = thisDataReader["SUBJPRECODE"].ToString();
+                            else if (subjectCode == thisDataReader["SUBJECTCOREQFILE.SUBJCODE"].ToString() && CoRequisiteRadioButton.Checked)
+                                copre = thisDataReader["SUBJCOCODE"].ToString();
 
-                            //
+                        //
                     }
                     i--;
                 }
