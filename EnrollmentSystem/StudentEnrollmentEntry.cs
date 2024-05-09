@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace EnrollmentSystem
 {
-    public partial class SubjectScheduleEntry : Form
+    public partial class StudentEnrollmentEntry : Form
     {
-        public SubjectScheduleEntry()
+        public StudentEnrollmentEntry()
         {
             InitializeComponent();
-        }
-
-        private void SubjectScheduleEntry_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

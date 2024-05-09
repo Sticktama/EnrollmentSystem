@@ -20,3 +20,4 @@ C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.cspro
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.csproj.CoreCompileInputs.cache
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.exe
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.pdb
+C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.StudentEnrollmentEntry.resources

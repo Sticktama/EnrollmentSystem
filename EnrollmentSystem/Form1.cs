@@ -57,7 +57,7 @@ namespace EnrollmentSystem
                 thisConnection.Open();
                 OleDbCommand thisCommand = thisConnection.CreateCommand();
 
-                string sql = "SELECT * FROM SUBJECTFILE, SUBJECTPREQFILE, SUBJECTCOREQFILE";
+                string sql = "SELECT * FROM SUBJECTFILE, SUBJECTPREQFILE";
                 thisCommand.CommandText = sql;
 
                 OleDbDataReader thisDataReader = thisCommand.ExecuteReader();
@@ -67,6 +67,7 @@ namespace EnrollmentSystem
                 string description = "";
                 string units = "";
                 string copre = "";
+                string category = PreRequisiteRadioButton.Checked ? "PR" : "CR";
                 int i = SubjectDataGridView.Rows.Count;
                 while (thisDataReader.Read())
                 {
@@ -82,17 +83,16 @@ namespace EnrollmentSystem
                     }
                     if (TrimUpper(thisDataReader["SFSUBJCODE"].ToString()) == input)
                     { 
-                            
+                        subjectCode = thisDataReader["SFSUBJCODE"].ToString();
+                        description = thisDataReader["SFSUBJDESC"].ToString();
+                        units = thisDataReader["SFSUBJUNITS"].ToString();
+
+                        if (subjectCode == thisDataReader["SUBJCODE"].ToString() && 
+                            category == thisDataReader["SUBJCATEGORY"].ToString())
+                        {
+                            copre = thisDataReader["SUBJPRECODE"].ToString() + $" ({category})";
                             found = true;
-                            subjectCode = thisDataReader["SFSUBJCODE"].ToString();
-                            description = thisDataReader["SFSUBJDESC"].ToString();
-                            units = thisDataReader["SFSUBJUNITS"].ToString();
-
-                            if(subjectCode == thisDataReader["SUBJECTPREQFILE.SUBJCODE"].ToString() && PreRequisiteRadioButton.Checked)
-                                copre = thisDataReader["SUBJPRECODE"].ToString();
-                            else if (subjectCode == thisDataReader["SUBJECTCOREQFILE.SUBJCODE"].ToString() && CoRequisiteRadioButton.Checked)
-                                copre = thisDataReader["SUBJCOCODE"].ToString();
-
+                        }
                         //
                     }
                     i--;
