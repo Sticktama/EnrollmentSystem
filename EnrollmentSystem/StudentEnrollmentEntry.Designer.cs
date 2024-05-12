@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -70,14 +70,14 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(15, 15, 0, 0);
-            this.label1.Size = new System.Drawing.Size(950, 66);
+            this.label1.Size = new System.Drawing.Size(808, 66);
             this.label1.TabIndex = 1;
             this.label1.Text = "Student Enrollment Form";
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(107, 126);
+            this.textBox4.Location = new System.Drawing.Point(128, 129);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(133, 24);
@@ -161,7 +161,7 @@
             // SubjectCodeTextBox
             // 
             this.SubjectCodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectCodeTextBox.Location = new System.Drawing.Point(107, 86);
+            this.SubjectCodeTextBox.Location = new System.Drawing.Point(128, 89);
             this.SubjectCodeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SubjectCodeTextBox.Name = "SubjectCodeTextBox";
             this.SubjectCodeTextBox.Size = new System.Drawing.Size(133, 24);
@@ -197,9 +197,9 @@
             this.SubjectDataGridView.ReadOnly = true;
             this.SubjectDataGridView.RowHeadersVisible = false;
             this.SubjectDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.SubjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.SubjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.SubjectDataGridView.Size = new System.Drawing.Size(702, 155);
             this.SubjectDataGridView.TabIndex = 29;
             // 
@@ -213,8 +213,8 @@
             // 
             // SubjectCodeColumn
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectCodeColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectCodeColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.SubjectCodeColumn.HeaderText = "Subject Code";
             this.SubjectCodeColumn.MinimumWidth = 6;
             this.SubjectCodeColumn.Name = "SubjectCodeColumn";
@@ -223,8 +223,8 @@
             // 
             // StartTimeColumn
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartTimeColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartTimeColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.StartTimeColumn.HeaderText = "StartTime";
             this.StartTimeColumn.MinimumWidth = 6;
             this.StartTimeColumn.Name = "StartTimeColumn";
@@ -233,8 +233,8 @@
             // 
             // EndTimeColumn
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndTimeColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndTimeColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.EndTimeColumn.HeaderText = "EndTime";
             this.EndTimeColumn.MinimumWidth = 6;
             this.EndTimeColumn.Name = "EndTimeColumn";
@@ -259,8 +259,8 @@
             // 
             // UnitsColumn
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitsColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitsColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.UnitsColumn.HeaderText = "Units";
             this.UnitsColumn.MinimumWidth = 6;
             this.UnitsColumn.Name = "UnitsColumn";
@@ -290,9 +290,9 @@
             this.label7.Location = new System.Drawing.Point(26, 417);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.Size = new System.Drawing.Size(88, 17);
             this.label7.TabIndex = 31;
-            this.label7.Text = "EDP Code";
+            this.label7.Text = "Encoded By:";
             // 
             // textBox6
             // 
@@ -310,9 +310,9 @@
             this.label8.Location = new System.Drawing.Point(515, 419);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 17);
+            this.label8.Size = new System.Drawing.Size(76, 17);
             this.label8.TabIndex = 33;
-            this.label8.Text = "EDP Code";
+            this.label8.Text = "Total Units";
             // 
             // StudentEnrollmentEntry
             // 

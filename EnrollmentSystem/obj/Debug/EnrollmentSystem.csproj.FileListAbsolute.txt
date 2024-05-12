@@ -13,7 +13,6 @@ C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\bin\Debug\EnrollmentSystem.exe.c
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\bin\Debug\EnrollmentSystem.exe
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\bin\Debug\EnrollmentSystem.pdb
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.csproj.AssemblyReference.cache
-C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.Form1.resources
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.Properties.Resources.resources
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.SubjectScheduleEntry.resources
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.csproj.GenerateResource.cache
@@ -21,3 +20,6 @@ C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.cspro
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.exe
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.pdb
 C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.StudentEnrollmentEntry.resources
+C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.SubjectEntry.resources
+C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.StudentEntry.resources
+C:\Users\Dell\EnrollmentSystem\EnrollmentSystem\obj\Debug\EnrollmentSystem.MenuForm.resources

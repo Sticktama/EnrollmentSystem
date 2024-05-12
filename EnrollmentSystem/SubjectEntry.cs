@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace EnrollmentSystem
 {
-    public partial class Form1 : Form
+    public partial class SubjectEntry : Form
     {
-        public Form1()
+        public SubjectEntry()
         {
             InitializeComponent();
         }
@@ -93,7 +93,7 @@ namespace EnrollmentSystem
                             copre = thisDataReader["SUBJPRECODE"].ToString() + $" ({category})";
                             found = true;
                         }
-                        //
+                        //  
                     }
                     i--;
                 }
@@ -134,6 +134,7 @@ namespace EnrollmentSystem
             {
                 clear[x].Text = "";
             }
+            CategoryComboBox.SelectedIndex = -1;
         }
     }
 }

@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentEntry.Designer.cs">
+      <DependentUpon>StudentEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectEntry.Designer.cs">
+      <DependentUpon>SubjectEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +78,14 @@
     <Compile Include="SubjectScheduleEntry.Designer.cs">
       <DependentUpon>SubjectScheduleEntry.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentEntry.resx">
+      <DependentUpon>StudentEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectEntry.resx">
+      <DependentUpon>SubjectEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

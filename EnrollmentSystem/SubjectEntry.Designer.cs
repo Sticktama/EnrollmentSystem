@@ -1,6 +1,6 @@
 ﻿namespace EnrollmentSystem
 {
-    partial class Form1
+    partial class SubjectEntry
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubjectEntry));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -71,12 +71,13 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(-1, -2);
+            this.label1.Location = new System.Drawing.Point(0, -2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(859, 105);
+            this.label1.Size = new System.Drawing.Size(859, 87);
             this.label1.TabIndex = 0;
             this.label1.Text = "Subject Entry";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -373,17 +374,17 @@
             this.SubjectDataGridView.ReadOnly = true;
             this.SubjectDataGridView.RowHeadersVisible = false;
             this.SubjectDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.SubjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.SubjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.SubjectDataGridView.Size = new System.Drawing.Size(704, 159);
             this.SubjectDataGridView.TabIndex = 10;
             this.SubjectDataGridView.SelectionChanged += new System.EventHandler(this.myDataGridView_SelectionChanged);
             // 
             // SubjectCodeColumn
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubjectCodeColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectCodeColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.SubjectCodeColumn.HeaderText = "Subject Code";
             this.SubjectCodeColumn.MinimumWidth = 6;
             this.SubjectCodeColumn.Name = "SubjectCodeColumn";
@@ -392,8 +393,8 @@
             // 
             // DescriptionColumn
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.DescriptionColumn.HeaderText = "Description";
             this.DescriptionColumn.MinimumWidth = 6;
             this.DescriptionColumn.Name = "DescriptionColumn";
@@ -402,8 +403,8 @@
             // 
             // UnitsColumn
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnitsColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnitsColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.UnitsColumn.HeaderText = "Units";
             this.UnitsColumn.MinimumWidth = 6;
             this.UnitsColumn.Name = "UnitsColumn";
@@ -412,8 +413,8 @@
             // 
             // CoPreRequisiteColumn
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoPreRequisiteColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoPreRequisiteColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.CoPreRequisiteColumn.HeaderText = "Co/Pre-Requisite";
             this.CoPreRequisiteColumn.MinimumWidth = 6;
             this.CoPreRequisiteColumn.Name = "CoPreRequisiteColumn";
@@ -443,7 +444,7 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // SubjectEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -454,8 +455,8 @@
             this.Controls.Add(this.SubjectInfoGroupBox);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "SubjectEntry";
+            this.Text = "Subject Entry";
             this.SubjectInfoGroupBox.ResumeLayout(false);
             this.SubjectInfoGroupBox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
