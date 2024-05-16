@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,28 +21,34 @@ namespace EnrollmentSystem
 
         private void StudentEntryButton_Click(object sender, EventArgs e)
         {
-            StudentEntry studentEntry = new StudentEntry();
-            
-            studentEntry.Show();
-            
+            StudentEntry subjectEntry = new StudentEntry();
+            Hide();
+            subjectEntry.ShowDialog();
+            Close();
         }
 
         private void SubjectEntryButton_Click(object sender, EventArgs e)
         {
             SubjectEntry subjectEntry = new SubjectEntry();
-            subjectEntry.Show();
+            Hide();
+            subjectEntry.ShowDialog();
+            Close();
         }
 
         private void SubjectScheduleEntryButton_Click(object sender, EventArgs e)
         {
             SubjectScheduleEntry subjectSchedEntry = new SubjectScheduleEntry();
-            subjectSchedEntry.Show();
+            Hide();
+            subjectSchedEntry.ShowDialog();
+            Close();
         }
 
         private void StudentEnrollmentButton_Click(object sender, EventArgs e)
         {
             StudentEnrollmentEntry studentEnrollmentEntry = new StudentEnrollmentEntry();
-            studentEnrollmentEntry.Show();
+            Hide();
+            studentEnrollmentEntry.ShowDialog();
+            Close();
         }
     }
 }

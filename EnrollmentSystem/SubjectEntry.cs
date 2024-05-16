@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,12 @@ using System.Windows.Forms;
 
 namespace EnrollmentSystem
 {
+
     public partial class SubjectEntry : Form
     {
+
+        [DllImport("user32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
         public SubjectEntry()
         {
             InitializeComponent();
@@ -23,31 +28,52 @@ namespace EnrollmentSystem
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-           
             OleDbConnection thisConnection = new OleDbConnection(connectionString);
             string sql = "SELECT * FROM SUBJECTFILE";
             OleDbDataAdapter thisAdapter = new OleDbDataAdapter(sql, thisConnection);
             OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
 
             DataSet thisDataSet = new DataSet();
+
+            //fixes the no primary key error by setting it up
+            thisAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             thisAdapter.Fill(thisDataSet, "SubjectFile");
 
-            DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
-            thisRow["SFSUBJCODE"] = SubjectCodeTextBox.Text;
-            thisRow["SFSUBJDESC"] = DescriptionTextBox.Text;
-            thisRow["SFSUBJUNITS"] = Convert.ToUInt16(UnitsTextBox.Text);
-            thisRow["SFSUBJCATEGORY"] = CategoryComboBox.Text.Substring(0, 3);
-            thisRow["SFSUBJREGOFRNG"] = Convert.ToUInt16(OfferingComboBox.Text.Substring(0, 1));
-            thisRow["SFSUBJCOURSECODE"] = CourseCodeComboBox.Text.Substring(0, 4);
-            thisRow["SFSUBJCURRYEAR"] = CurriculumYearTextBox.Text;
+            //check if entry is empty
+            bool empty = false;
+            foreach (Control ctrl in SubjectInfoGroupBox.Controls)
+            {
+                if (ctrl.Text.Equals("") || ctrl is ComboBox && ctrl.Text.Equals("-Choose-"))
+                {
+                    empty = true;
+                    break;
+                }
+            }
 
-            thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
-            thisAdapter.Update(thisDataSet, "SubjectFile");
+            DataRow findRow = thisDataSet.Tables["SubjectFile"].Rows.Find(SubjectCodeTextBox.Text);
 
-            //mag insert pa code here
+            if (findRow != null)
+                MessageBox.Show("Duplicate Entry!");
+            else if (empty)
+                MessageBox.Show("Please fill all the fields!");
+            else
+            {
+                DataRow thisRow = thisDataSet.Tables["SubjectFile"].NewRow();
+                thisRow["SFSUBJCODE"] = SubjectCodeTextBox.Text;
+                thisRow["SFSUBJDESC"] = DescriptionTextBox.Text;
+                thisRow["SFSUBJUNITS"] = Convert.ToUInt16(UnitsTextBox.Text);
+                thisRow["SFSUBJCATEGORY"] = CategoryComboBox.Text.Substring(0, 3);
+                thisRow["SFSUBJREGOFRNG"] = Convert.ToUInt16(OfferingComboBox.Text.Substring(0, 1));
+                thisRow["SFSUBJCOURSECODE"] = CourseCodeComboBox.Text.Substring(0, 4);
+                thisRow["SFSUBJCURRYEAR"] = CurriculumYearTextBox.Text;
 
-            MessageBox.Show("Entries Recorded");
+                thisDataSet.Tables["SubjectFile"].Rows.Add(thisRow);
+                thisAdapter.Update(thisDataSet, "SubjectFile");
+
+                MessageBox.Show("Entries Recorded");
+            }   
         }
+    
 
         private void RequisiteTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -127,14 +153,34 @@ namespace EnrollmentSystem
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            Control[] clear = { SubjectCodeTextBox, DescriptionTextBox, UnitsTextBox,
-                                OfferingComboBox, CategoryComboBox, CourseCodeComboBox,
-                                CurriculumYearTextBox};
-            for (int x = 0; x < clear.Length; x++)
+            foreach (Control ctrl in SubjectInfoGroupBox.Controls)
             {
-                clear[x].Text = "";
+                if (ctrl is TextBox)
+                {
+                    ctrl.Text = "";
+                }
+                if (ctrl is ComboBox)
+                {
+                    ComboBox combo = (ComboBox)ctrl;
+                    combo.SelectedIndex = 0;
+                }
             }
-            CategoryComboBox.SelectedIndex = -1;
+            RequisiteTextBox.Text = "";
+            PreRequisiteRadioButton.Checked = true;
+            SubjectDataGridView.Rows.Clear();
+            
+        }
+
+        private void SubjectEntry_Load(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in SubjectInfoGroupBox.Controls)
+            {
+                if (ctrl is ComboBox)
+                {
+                    ComboBox combo = (ComboBox)ctrl;
+                    combo.SelectedIndex = 0;
+                }
+            }
         }
     }
 }
