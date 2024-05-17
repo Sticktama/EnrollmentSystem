@@ -146,36 +146,26 @@ namespace EnrollmentSystem
                         //  
                     }
                     DateTime startTimeData = i > 0 ? Convert.ToDateTime(EnrollDataGridView.Rows[i - 1].Cells
-                                            ["StartTimeColumn"].Value.ToString()) : System.DateTime.MinValue;
+                                            ["StartTimeColumn"].Value.ToString()) : DateTime.MinValue;
                     DateTime endTimeData = i > 0 ? Convert.ToDateTime(EnrollDataGridView.Rows[i - 1].Cells
-                                            ["EndTimeColumn"].Value.ToString()) : System.DateTime.MinValue;
+                                            ["EndTimeColumn"].Value.ToString()) : DateTime.MinValue;
                     string daysData = i > 0 ? TrimUpper(EnrollDataGridView.Rows[i - 1].Cells
                                             ["DaysColumn"].Value.ToString()) : "";
                     //gi brute force method nko to extract time value
                     //MessageBox.Show(startTime.ToString().Substring(10, 5) + " " + startTime.ToString().Substring(19, 2));
-                    for (int x = 0; x < daysData.Length; x++)
-                    {
-                        for(int y = 0; y < days.Length; y++)
-                        {
+
                             
-                            if (daysData.Contains("TH") && days.Contains("TH") ||
-                                !(daysData.Contains("TH") && days.Contains("TH")) &&
-                                daysData[x].ToString().Contains(days[y].ToString()))
-                            {
+                    if (daysData.ToString().Contains("TH") && days.ToString().Contains("TH") 
+                    || daysData.ToString().Contains(days.ToString()))
+                    {
                                 sameDay = true;
-                                break;
-                            }
-                        }
                     }
-
-                    
-
-
-                    if (i > 0 && startTimeData < Convert.ToDateTime(thisDataReader["SSFENDTIME"]) &&
-                        endTimeData > Convert.ToDateTime(thisDataReader["SSFSTARTTIME"]))
+                    MessageBox.Show(endTimeData + " " + Convert.ToDateTime(thisDataReader["SSFSTARTTIME"]));
+                    if (i > 0 && startTime != "" && endTime != "" && startTimeData < Convert.ToDateTime(endTime) &&
+                        endTimeData > Convert.ToDateTime(startTime))
                         timeOverlap = true;
+                   
 
-                    
                     i--;
                 }
 
@@ -184,7 +174,7 @@ namespace EnrollmentSystem
                     MessageBox.Show("Subject Code Already Exists!");
                 else if (!found)
                     MessageBox.Show("Subject Code Not Found");
-                else if (timeOverlap)
+                else if (timeOverlap && sameDay)
                     MessageBox.Show("Schedule Conflict!");
                 else if (totalUnits > 21)
                     MessageBox.Show("Total Units cannot exceed beyond 21");
@@ -198,7 +188,6 @@ namespace EnrollmentSystem
                     EnrollDataGridView.Rows[index].Cells["DaysColumn"].Value = days;
                     EnrollDataGridView.Rows[index].Cells["RoomColumn"].Value = room;
                     EnrollDataGridView.Rows[index].Cells["UnitsColumn"].Value = units;
-
                 }
                 totalUnits += units;
                 TotalUnitsLabel.Text = totalUnits.ToString();
@@ -335,14 +324,18 @@ namespace EnrollmentSystem
             EnrollDataGridView.ClearSelection();
         }
 
-        private void TotalUnitsLabel_Click(object sender, EventArgs e)
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void HomeButton_Click(object sender, EventArgs e)
         {
-
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            menuForm.login = true;
+            menuForm.ShowDialog();
+            Close();
         }
     }
 }

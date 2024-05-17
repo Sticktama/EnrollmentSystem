@@ -368,6 +368,7 @@
             this.HomeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HomeButton.TabIndex = 59;
             this.HomeButton.TabStop = false;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // TotalUnitsLabel
             // 
@@ -379,7 +380,6 @@
             this.TotalUnitsLabel.Name = "TotalUnitsLabel";
             this.TotalUnitsLabel.Size = new System.Drawing.Size(67, 22);
             this.TotalUnitsLabel.TabIndex = 60;
-            this.TotalUnitsLabel.Click += new System.EventHandler(this.TotalUnitsLabel_Click);
             // 
             // EnrolleeInfoGroupBox
             // 
