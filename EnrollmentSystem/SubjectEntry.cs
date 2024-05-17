@@ -97,18 +97,18 @@ namespace EnrollmentSystem
                 DataRow findRequisiteRow = thisDataSet.Tables["SubjectPreqFile"].Rows.Find(valuesToSearch);
                 if (findRequisiteRow == null)
                 {
-                    MessageBox.Show(SubjectDataGridView.Rows.Count + "");
-                    
-                    DataRow thisRequisiteRow = thisDataSet.Tables["SubjectPreqFile"].NewRow();
-                    string copre = SubjectDataGridView.Rows[0].Cells["CoPreRequisiteColumn"].Value.ToString();
-                    thisRequisiteRow["SUBJCODE"] = TrimUpper(SubjectCodeTextBox.Text);
-                    thisRequisiteRow["SUBJPRECODE"] = TrimUpper(copre).Remove(copre.Length-5);
-                    thisRequisiteRow["SUBJCATEGORY"] = TrimUpper(copre).Substring(copre.Length - 3, 2);
+                    if (SubjectDataGridView.Rows.Count > 0)
+                    {
+                        DataRow thisRequisiteRow = thisDataSet.Tables["SubjectPreqFile"].NewRow();
+                        string copre = SubjectDataGridView.Rows[0].Cells["CoPreRequisiteColumn"].Value.ToString();
+                        thisRequisiteRow["SUBJCODE"] = TrimUpper(SubjectCodeTextBox.Text);
+                        thisRequisiteRow["SUBJPRECODE"] = TrimUpper(copre).Remove(copre.Length - 5);
+                        thisRequisiteRow["SUBJCATEGORY"] = TrimUpper(copre).Substring(copre.Length - 3, 2);
 
-                    thisDataSet.Tables["SubjectPreqFile"].Rows.Add(thisRequisiteRow);
+                        thisDataSet.Tables["SubjectPreqFile"].Rows.Add(thisRequisiteRow);
 
-
-                    requisiteAdapter.Update(thisDataSet, "SubjectPreqFile");
+                        requisiteAdapter.Update(thisDataSet, "SubjectPreqFile");
+                    }
                     MessageBox.Show("Entries Recorded");
                 }
                 else
