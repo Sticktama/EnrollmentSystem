@@ -18,11 +18,6 @@ namespace EnrollmentSystem
             InitializeComponent();
         }
         string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Dell\EnrollmentSystem\Mendez.accdb";
-        //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\Mendez.accdb";
-        private void SubjectScheduleEntry_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void SubjectCode_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -48,8 +43,8 @@ namespace EnrollmentSystem
                     if (TrimUpper(thisDataReader["SFSUBJCODE"].ToString()) == input)
                     {
                         description = thisDataReader["SFSUBJDESC"].ToString();
-                       
-                        //  
+                        found = true;
+                        //same ra logic sa subject entry
                     }
                 }
 
@@ -72,35 +67,117 @@ namespace EnrollmentSystem
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            OleDbConnection thisConnection = new OleDbConnection(connectionString);
-            string sql = "SELECT * FROM SUBJECTSCHEDFILE";
+            OleDbConnection thisConnection = new OleDbConnection(MenuForm.connectionString);
+            string sql = "SELECT * FROM SUBJECTSCHEDFILE WHERE SSFSTARTTIME >= #1899-12-30# AND SSFSTARTTIME < #1899-12-31#";
             OleDbDataAdapter thisAdapter = new OleDbDataAdapter(sql, thisConnection);
             OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
 
             DataSet thisDataSet = new DataSet();
+
+            //fixes the no primary key error by setting it up
+            thisAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             thisAdapter.Fill(thisDataSet, "SubjectSchedFile");
 
-            DataRow thisRow = thisDataSet.Tables["SubjectSchedFile"].NewRow();
-            thisRow["SSFEDPCODE"] = SubjectEDPCodeTextBox.Text;
-            thisRow["SSFSUBJCODE"] = SubjectCodeTextBox.Text;
-            thisRow["SSFSTARTTIME"] = Convert.ToDateTime(TimeStartTextBox);
-            thisRow["SSFENDTIME"] = Convert.ToDateTime(TimeEndTextBox);
-            thisRow["SSFDAYS"] = DaysTextBox.Text;
-            thisRow["SSFROOM"] = RoomTextBox.Text;
-            thisRow["SSFXM"] = AmPmTextBox.Text;
-            thisRow["SSFSECTION"] = SectionTextBox.Text;
-            thisRow["SSFMAXSIZE"] = SchoolYearTextBox.Text;
+            bool timeError = Convert.ToDateTime(StartTimePicker.Text) >= Convert.ToDateTime(EndTimePicker.Text);
+            //check if entry is empty
+            bool empty = false;
+            foreach (Control ctrl in ScheduleInfoGroupBox.Controls)
+            {
+                if ((ctrl is TextBox || ctrl is Label) && ctrl.Text.Equals(""))
+                {
+                    empty = true;
+                    break;
+                }
+            }
+            DataRow findRow = thisDataSet.Tables["SubjectSchedFile"].Rows.Find(SubjectEDPCodeTextBox.Text);
 
-            thisDataSet.Tables["SubjectSchedFile"].Rows.Add(thisRow);
-            thisAdapter.Update(thisDataSet, "SubjectSchedFile");
+            if (findRow != null)
+                MessageBox.Show("Duplicate Entry!");
+            else if (empty)
+                MessageBox.Show("Please fill all the fields!");
+            else if (timeError)
+                MessageBox.Show("Start Time cannot be greater than End Time!");
+            else
+            {
+                DataRow thisRow = thisDataSet.Tables["SubjectSchedFile"].NewRow();
+                thisRow["SSFEDPCODE"] = SubjectEDPCodeTextBox.Text;
+                thisRow["SSFSUBJCODE"] = SubjectCodeTextBox.Text;
+                thisRow["SSFSTARTTIME"] = StartTimePicker.Text;
+                thisRow["SSFENDTIME"] = EndTimePicker.Text;
+                thisRow["SSFDAYS"] = DaysTextBox.Text;
+                thisRow["SSFROOM"] = RoomTextBox.Text;
+                thisRow["SSFSECTION"] = SectionTextBox.Text;
+                thisRow["SSFSCHOOLYEAR"] = SchoolYearTextBox.Text;
 
-            //mag insert pa code here
+                thisDataSet.Tables["SubjectSchedFile"].Rows.Add(thisRow);
+                thisAdapter.Update(thisDataSet, "SubjectSchedFile");
 
-            MessageBox.Show("Entries Recorded");
+                MessageBox.Show("Entries Recorded");
+            }
         }
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            foreach (Control ctrl in Controls)
+            {
+                if (ctrl is TextBox || ctrl is Label)
+                {
+                    ctrl.Text = "";
+                }
+                if (ctrl is ComboBox)
+                {
+                    ComboBox combo = (ComboBox)ctrl;
+                    combo.SelectedIndex = 0;
+                }
+            }
+        }
 
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            menuForm.login = true;
+            menuForm.ShowDialog();
+            Close();
+        }
+
+        private void SubjectScheduleEntry_Load(object sender, EventArgs e)
+        {
+            MenuForm.currentPos = 2;
+            MenuForm.currentForm = this;
+            foreach (Control ctrl in Controls)
+            {
+                if (ctrl is ComboBox)
+                {
+                    ComboBox combo = (ComboBox)ctrl;
+                    combo.SelectedIndex = 0;
+                }
+            }
+        }
+
+        private void JumpPanelButton_Click(object sender, EventArgs e)
+        {
+            JumpForm jumpForm = new JumpForm();
+            jumpForm.ShowDialog();
+        }
+
+        private void PreviousButton_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            //i access the form array and create instance
+            MenuForm.currentForm = (Form)Activator.CreateInstance(menuForm.screenTypes[--MenuForm.currentPos]);
+            MenuForm.currentForm.ShowDialog();
+            Close();
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            //i access the form array and create instance
+            MenuForm.currentForm = (Form)Activator.CreateInstance(menuForm.screenTypes[++MenuForm.currentPos]);
+            MenuForm.currentForm.ShowDialog();
+            Close();
         }
     }
 }

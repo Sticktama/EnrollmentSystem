@@ -13,8 +13,6 @@ namespace EnrollmentSystem
 {
     public partial class StudentEntry : Form
     {
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Dell\EnrollmentSystem\Mendez.accdb";
-        //string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\Server2\second semester 2023-2024\LAB802\79866_CC_APPSDEV22_1200_0130_PM_TTH\79866-23241730\Desktop\FINALS\EnrollmentSystem\Mendez.accdb";
         public StudentEntry()
         {
             InitializeComponent();
@@ -22,12 +20,16 @@ namespace EnrollmentSystem
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            menuForm.login = true;
+            menuForm.ShowDialog();
+            Close();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            OleDbConnection thisConnection = new OleDbConnection(connectionString);
+            OleDbConnection thisConnection = new OleDbConnection(MenuForm.connectionString);
             string sql = "SELECT * FROM STUDENTFILE";
             OleDbDataAdapter thisAdapter = new OleDbDataAdapter(sql, thisConnection);
             OleDbCommandBuilder thisBuilder = new OleDbCommandBuilder(thisAdapter);
@@ -42,7 +44,7 @@ namespace EnrollmentSystem
             bool empty = false;
             foreach (Control ctrl in Controls)
             {
-                if (ctrl.Text.Equals("") || ctrl is ComboBox && ctrl.Text.Equals("-Choose-"))
+                if (ctrl.Text.Equals("") && ctrl is TextBox || ctrl is ComboBox && ctrl.Text.Equals("-Choose-"))
                 {
                     empty = true;
                     break;
@@ -62,7 +64,7 @@ namespace EnrollmentSystem
                 thisRow["STFSTUDFNAME"] = FirstnameTextBox.Text;
                 thisRow["STFSTUDMNAME"] = MiddlenameTextBox.Text;
                 thisRow["STFSTUDLNAME"] = LastnameTextBox.Text;
-                thisRow["STFSTUDCOURSE"] = CourseTextBox.Text;
+                thisRow["STFSTUDCOURSE"] = CourseComboBox.Text;
                 thisRow["STFSTUDYEAR"] = YearTextBox.Text;
                 thisRow["STFSTUDREMARKS"] = RemarksTextBox.Text;
                 thisRow["STFSTUDSTATUS"] = StatusTextBox.Text;
@@ -76,7 +78,59 @@ namespace EnrollmentSystem
 
         private void StudentEntry_Load(object sender, EventArgs e)
         {
-            RemarksTextBox.SelectedIndex = 0;
+            MenuForm.currentPos = 1;
+            MenuForm.currentForm = this;
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            //i access the form array and create instance
+            MenuForm.currentForm = (Form)Activator.CreateInstance(menuForm.screenTypes[++MenuForm.currentPos]);
+            MenuForm.currentForm.ShowDialog();
+            Close();
+        }
+
+        private void PreviousButton_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            //i access the form array and create instance
+            MenuForm.currentForm = (Form)Activator.CreateInstance(menuForm.screenTypes[--MenuForm.currentPos]);
+            MenuForm.currentForm.ShowDialog();
+            Close();
+        }
+
+        private void JumpPanelButton_Click(object sender, EventArgs e)
+        {
+            JumpForm jumpForm = new JumpForm();
+            jumpForm.ShowDialog();
+        }
+
+        private void HomeButton_Click(object sender, EventArgs e)
+        {
+            MenuForm menuForm = new MenuForm();
+            Hide();
+            menuForm.login = true;
+            menuForm.ShowDialog();
+            Close();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            foreach (Control ctrl in StudentInfoGroupBox.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ctrl.Text = "";
+                }
+                if (ctrl is ComboBox)
+                {
+                    ComboBox combo = (ComboBox)ctrl;
+                    combo.SelectedIndex = 0;
+                }
+            }
         }
     }
 }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JumpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JumpForm.Designer.cs">
+      <DependentUpon>JumpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="SubjectScheduleEntry.Designer.cs">
       <DependentUpon>SubjectScheduleEntry.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="JumpForm.resx">
+      <DependentUpon>JumpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
